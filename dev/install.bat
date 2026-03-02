@@ -26,6 +26,8 @@ CALL python manage.py makemigrations
 ECHO --
 CALL python manage.py migrate
 ECHO "migrate --> Ok"
+ECHO --
+PAUSE
 GOTO :Menu
 
 :Super
@@ -96,8 +98,8 @@ ECHO "INSTALAR DJANGO REST FRAMEWORK"
 CALL pip install djangorestframework
 ECHO "django rest framework --> Ok"
 ECHO --
-ECHO "CREAR PROYECTO"
-CALL django-admin startproject proyectoDJ .
+ECHO "CREAR PROYECTO FRAMEWORK"
+CALL django-admin startproject apiFramework .
 ECHO "proyecto --> Ok"
 ECHO --
 ECHO "CREAR APP-API"
@@ -106,9 +108,11 @@ ECHO "api --> Ok"
 CALL git add .
 ECHO "Instalacion completa --> 100"
 ECHO --
-ECHO "Agregar 'api' y 'rest_framework' en proyectoDJ/settings.py"
+ECHO "Agregar 'api' y 'rest_framework' en apiFramework/settings.py"
 ECHO "INSTALLED_APPS = ['rest_framework','api']"
 ECHO "Crear Modelo y Admin"
+ECHO "CONTINUAR CON LAS MIGRACIONES"
+ECHO --
 PAUSE 
 CALL python manage.py makemigrations
 ECHO --
